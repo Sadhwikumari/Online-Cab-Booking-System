@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CabRide - Online Cab Booking</title>
+
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <header class="navbar">
+
+        <div class="logo">
+            🚕 <span>CabRide</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book-ride.html">Book Ride</a>
+            <a href="my-rides.html">My Rides</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <button class="signup-btn" onclick="window.location.href='signup.html'">
+            Sign Up
+        </button>
+
+    </header>
+
+
+   
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Your Ride,
+                <span>Our Responsibility.</span>
+            </h1>
+
+            <p>
+                Book a comfortable and reliable cab anytime,
+                anywhere with CabRide.
+            </p>
+
+            <button class="primary-btn"
+                    onclick="window.location.href='book-ride.html'">
+                🚕 Book a Ride
+            </button>
+
+        </div>
+
+
+        
+        <div class="booking-card">
+
+            <h2>Book Your Ride</h2>
+
+            <p class="booking-subtitle">
+                Enter your pickup and destination
+            </p>
+
+
+            <!-- Pickup -->
+            <div class="input-group">
+
+                <label>📍 Pickup Location</label>
+
+                <input
+                    type="text"
+                    id="pickup"
+                    placeholder="Enter pickup location"
+                >
+
+            </div>
+
+
+           
+            <div class="input-group">
+
+                <label>📍 Drop Location</label>
+
+                <input
+                    type="text"
+                    id="drop"
+                    placeholder="Enter destination"
+                >
+
+            </div>
+
+
+           
+            <div class="input-group">
+
+                <label>🚕 Select Cab</label>
+
+                <select id="cabType">
+
+                    <option value="">Select cab type</option>
+
+                    <option value="Mini">
+                        Mini - ₹12/km
+                    </option>
+
+                    <option value="Sedan">
+                        Sedan - ₹16/km
+                    </option>
+
+                    <option value="SUV">
+                        SUV - ₹20/km
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            
+            <div class="input-group">
+
+                <label>📏 Distance (KM)</label>
+
+                <input
+                    type="number"
+                    id="distance"
+                    placeholder="Enter distance"
+                    min="1"
+                >
+
+            </div>
+
+
+            
+            <div class="fare-box">
+
+                <span>Estimated Fare</span>
+
+                <strong id="fare">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            
+            <button
+                class="book-btn"
+                onclick="calculateFare()">
+
+                Calculate Fare
+
+            </button>
+
+
+            <button
+                class="confirm-btn"
+                onclick="bookRide()">
+
+                🚕 Book Now
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section class="features">
+
+        <h2>Why Choose CabRide?</h2>
+
+        <p class="section-text">
+            Everything you need for a safe and comfortable journey.
+        </p>
+
+
+        <div class="feature-container">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🚕
+                </div>
+
+                <h3>Easy Booking</h3>
+
+                <p>
+                    Book your cab in just a few clicks
+                    with our simple booking system.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>Safe & Reliable</h3>
+
+                <p>
+                    Travel safely with verified drivers
+                    and reliable cab services.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>Affordable Price</h3>
+
+                <p>
+                    Get transparent and affordable fares
+                    without hidden charges.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>Quick Service</h3>
+
+                <p>
+                    Find and book your ride quickly
+                    whenever you need it.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+    <section class="how-it-works">
+
+        <h2>How CabRide Works</h2>
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>Enter Location</h3>
+
+                <p>
+                    Enter your pickup and destination.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>Select Cab</h3>
+
+                <p>
+                    Choose the cab according to your needs.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>Confirm Ride</h3>
+
+                <p>
+                    Check fare and confirm your booking.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>Enjoy Your Ride</h3>
+
+                <p>
+                    Sit back and enjoy a comfortable journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>🚕 CabRide</h3>
+
+                <p>
+                    Your trusted online cab booking partner.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h4>Quick Links</h4>
+
+                <a href="index.html">Home</a>
+                <a href="book-ride.html">Book Ride</a>
+                <a href="my-rides.html">My Rides</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <p>📧 support@cabride.com</p>
+                <p>📞 +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 CabRide. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

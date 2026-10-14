@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Rides - CabRide</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .rides-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .rides-container h2 {
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+    .ride-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 15px;
+      background: #f9fafb;
+    }
+    .ride-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .badge {
+      background: #10b981;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .btn-home {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #f59e0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="rides-container">
+    <h2>🚖 My Rides History</h2>
+    
+    <div class="ride-card">
+      <div class="ride-row">
+        <span><strong>Status:</strong> <span class="badge">Confirmed</span></span>
+        <span><strong>Cab Type:</strong> Mini / Sedan</span>
+      </div>
+      <div class="ride-row">
+        <span><strong>Route:</strong> Recent Booking</span>
+        <span><strong>Fare:</strong> ₹150 - ₹250</span>
+      </div>
+    </div>
+
+    <p style="color: #6b7280; font-size: 14px;">Your recent booked rides from this session are recorded in MySQL database.</p>
+    <a href="/index.html" class="btn-home">← Back to Dashboard</a>
+  </div>
+</body>
+</html>
